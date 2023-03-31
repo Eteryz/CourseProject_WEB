@@ -1,6 +1,7 @@
 package com.example.applicationforfixingwashingmachines.service;
 
 import com.example.applicationforfixingwashingmachines.entity.WashingMachine;
+import com.example.applicationforfixingwashingmachines.exception.WashingMachineException;
 import com.example.applicationforfixingwashingmachines.pojo.WashingMachinePojo;
 import com.example.applicationforfixingwashingmachines.repository.WashingMachineRepository;
 import lombok.RequiredArgsConstructor;
@@ -41,6 +42,13 @@ public class WashingMachineServiceImpl implements WashingMachineService{
                 .stream()
                 .map(WashingMachinePojo::fromEntity)
                 .toList();
+    }
+
+    @Override
+    public WashingMachinePojo getById(Long id) throws WashingMachineException {
+        return WashingMachinePojo.fromEntity(washingMachineRepository.findById(id).orElseThrow(
+                () -> new WashingMachineException("WashingMachine with id: "+id+ " not found!")
+        ));
     }
 
 }

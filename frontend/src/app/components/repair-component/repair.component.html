@@ -1,0 +1,96 @@
+<div class="w-100 container-fluid" >
+  <div class="col-md-7 col-lg-8 container w-50 mx">
+    <div class="card border-dark mb-4" >
+      <div class="card-header"><b>Info WashingMachine</b></div>
+      <div class="card-body">
+        <h6 class="">{{"name"}}</h6>
+        <h6 class="">{{"company"}}</h6>
+        <h6 class="">{{"finishDate"}}</h6>
+        <h6 class="">{{"estimatedDate"}}</h6>
+      </div>
+      <div class="card-body border-top">
+        <h6 class="">{{"description"}}</h6>
+        <h6 class="">{{"price"}}</h6>
+        <h6 class="">{{"finishDate"}}</h6>
+        <h6 class="">{{"estimatedDate"}}</h6>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-7 col-lg-8 container w-50 mx" style="max-width: 400px" >
+    <h4 class="mb-3">Fill out an application</h4>
+    <form class="needs-validation"
+          name="repairForm"
+          novalidate
+          (ngSubmit)="submit()"
+          #f="ngForm"
+    >
+      <div class="row g-3">
+        <div class="col-12">
+          <label class="form-label">Full Name</label>
+          <input type="text"
+                 class="form-control"
+                 name="fullName"
+                 [(ngModel)]="repairForm.fullName"
+                 required="true">
+          <div class="invalid-feedback">
+            Valid first name is required.
+          </div>
+        </div>
+
+        <div class="col-12">
+          <label class="form-label">Email</label>
+          <input type="email"
+                 class="form-control"
+                 name="email"
+                 [(ngModel)]="repairForm.email"
+                 placeholder="you@example.com"
+                 required="true">
+          <div class="invalid-feedback">
+            Please enter a valid email address for shipping updates.
+          </div>
+        </div>
+
+        <div class="col-12">
+          <label class="form-label">Phone</label>
+          <input type="text"
+                 class="form-control"
+                 name="phoneNumber"
+                 [(ngModel)]="repairForm.phoneNumber"
+                 placeholder="89278X8X45X">
+        </div>
+
+        <div class="col-12">
+          <label  class="form-label">Price <span class="text-body-secondary">(Enter only a number)</span></label>
+          <input type="text"
+                 class="form-control"
+                 name="price"
+                 placeholder="1000.50 (тысяча рублей пятьдесят копеек)"
+                 [(ngModel)]="repairForm.price"
+                 required="true">
+          <div class="invalid-feedback">
+            Please enter your shipping address.
+          </div>
+        </div>
+
+        <div class="col-12">
+          <label class="form-label">Completion time</label>
+          <div class="input-group has-validation">
+            <input type="date"
+                   class="form-control"
+                   placeholder="Time"
+                   name="date"
+                   [(ngModel)]="repairForm.date"
+                   required="true">
+            <div class="invalid-feedback">
+              Your username is required.
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <button class="mt-5 mb-2 w-100 btn btn-primary btn-lg" type="submit">Apply</button>
+    </form>
+  </div>
+</div>
+
+

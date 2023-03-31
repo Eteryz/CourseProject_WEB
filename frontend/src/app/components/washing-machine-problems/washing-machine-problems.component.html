@@ -1,0 +1,23 @@
+<div class="container-fluid">
+  <h1>Problems</h1>
+  <div class="table-responsive">
+    <table class="table table-striped table-sm">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Price</th>
+        <th scope="col">Description</th>
+        <th scope="col">FinishDate</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let a of problems;let i = index;">
+        <td>{{i+1}}</td>
+        <td>{{a.price}}</td>
+        <td>{{a.description}}</td>
+        <td>{{a.finishDate}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

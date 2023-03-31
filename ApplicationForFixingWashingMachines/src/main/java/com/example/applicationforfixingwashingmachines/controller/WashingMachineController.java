@@ -1,5 +1,6 @@
 package com.example.applicationforfixingwashingmachines.controller;
 
+import com.example.applicationforfixingwashingmachines.exception.WashingMachineException;
 import com.example.applicationforfixingwashingmachines.pojo.WashingMachinePojo;
 import com.example.applicationforfixingwashingmachines.service.WashingMachineService;
 import lombok.RequiredArgsConstructor;
@@ -8,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 @RequestMapping(value = "/api/v1/washingMachine")
 @RequiredArgsConstructor
 public class WashingMachineController {
@@ -22,6 +24,15 @@ public class WashingMachineController {
     @GetMapping()
     public List<WashingMachinePojo> getAll(){
         return washingMachineService.findAll();
+    }
+
+    @GetMapping("/{id}")
+    public WashingMachinePojo getById(@PathVariable Long id)  {
+        try {
+            return washingMachineService.getById(id);
+        } catch (WashingMachineException e) {
+            return null;
+        }
     }
 
     @DeleteMapping("/delete/{id}")

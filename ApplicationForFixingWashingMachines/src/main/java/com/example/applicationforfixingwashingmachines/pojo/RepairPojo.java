@@ -6,6 +6,7 @@ import lombok.Setter;
 import lombok.ToString;
 import org.springframework.beans.BeanUtils;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Getter
@@ -18,7 +19,7 @@ public class RepairPojo {
     private String email;
     private double price;
     private String fullName;
-    private LocalDateTime time;
+    private LocalDate date;
     private Long problemId;
 
 
