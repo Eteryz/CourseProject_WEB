@@ -20,8 +20,7 @@ public class RepairController {
         return repairService.save(repairPojo);
     }
 
-    @GetMapping()
-
+    @GetMapping
     public List<RepairPojo> getAll(){
         return repairService.findAll();
     }

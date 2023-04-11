@@ -1,5 +1,6 @@
 package com.example.applicationforfixingwashingmachines.controller;
 
+import com.example.applicationforfixingwashingmachines.exception.ProblemNotFound;
 import com.example.applicationforfixingwashingmachines.pojo.ProblemPojo;
 import com.example.applicationforfixingwashingmachines.service.ProblemService;
 import lombok.RequiredArgsConstructor;
@@ -18,6 +19,15 @@ public class ProblemController {
     @PostMapping("/add")
     public ProblemPojo addWashingMachine(@RequestBody ProblemPojo problemPojo){
         return problemService.save(problemPojo);
+    }
+
+    @GetMapping("/{id}")
+    public ProblemPojo getById(@PathVariable Long id){
+        try {
+            return problemService.findById(id);
+        } catch (ProblemNotFound e) {
+            return null;
+        }
     }
 
     @GetMapping()

@@ -18,7 +18,6 @@ public class ProblemPojo {
     private Long id;
     private String description;
     private double price;
-    private LocalDateTime estimatedDate;
     private LocalDateTime finishDate;
     private Long washingMachineId;
     private List<RepairPojo> repairs = new LinkedList<>();

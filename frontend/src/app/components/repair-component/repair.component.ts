@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import {Repair} from "../../models/Repair";
+import {Repair, RepairImpl} from "../../models/Repair";
 import {ActivatedRoute, Router} from "@angular/router";
 import {RepairService} from "../../services/repair.service";
+import {ProblemService} from "../../services/problem.service";
+import {Problem, ProblemImpl} from "../../models/Problem";
+import {WashingMachineService} from "../../services/washing-machine.service";
+import {WashingMachine, WashingMachineImpl} from "../../models/WashingMachine";
 
 @Component({
   selector: 'app-repair-component',
@@ -9,23 +13,37 @@ import {RepairService} from "../../services/repair.service";
   styleUrls: ['./repair.component.css']
 })
 export class RepairComponent implements OnInit {
-  repairForm: Repair = {
-    id:0,
-    fullName:"",
-    date: new Date(),
-    price:0,
-    email:"",
-    phoneNumber:"",
-    problemId: 0
-  };
+
+  repairForm: Repair = new RepairImpl();
+
+  problemInfo: Problem;
+  washingMachineInfo: WashingMachine;
 
   constructor( private route: ActivatedRoute,
                private router: Router,
-               private repairService: RepairService) {
+               private repairService: RepairService,
+               private problemService: ProblemService,
+               private washingMachineService: WashingMachineService
+               ) {
+    this.problemInfo = new ProblemImpl();
+    this.washingMachineInfo = new WashingMachineImpl();
   }
 
   ngOnInit(): void {
     this.repairForm.problemId = this.route.snapshot.params['id'];
+    this.problemService.getProblemById(this.repairForm.problemId)
+      .subscribe({
+        next: value => {
+          this.problemInfo = value;
+          this.washingMachineService.getByIdWashingMachine(this.problemInfo?.washingMachineId)
+            .subscribe({
+                next: value => {
+                  this.washingMachineInfo = value;
+                }
+              }
+            );
+        }
+      });
 
   }
 

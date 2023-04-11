@@ -1,14 +1,13 @@
-<form class="card p-2 container">
+<div class="card p-2 container">
   <div class="input-group">
-    <input type="text" class="form-control" placeholder="Search">
-    <button type="submit" class="btn btn-secondary">Search</button>
+    <input type="search" class="form-control" (search)="gelProblems()" placeholder="Search" [(ngModel)]="search" >
+    <button type="submit" class="btn btn-secondary" (click)="searchOnClick()">Search</button>
   </div>
-</form>
-<div class="list-group p-2 w-50 container" *ngFor="let el of problems; let i = index;" >
+</div>
+<div class="list-group p-2 w-50 container" *ngFor="let el of problems;" >
   <a href="problem/{{el.id}}" class="list-group-item list-group-item-action" aria-current="true">
     <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">Problem №{{i+1}}</h5>
-      <small>Auction on the {{el.estimatedDate}}</small>
+      <h5 class="mb-1">Problem №{{el.id}}</h5>
     </div>
     <p class="mb-1">Description: {{el.description}}</p>
     <small>Number of applications received: {{el.repairs.length}}.</small>

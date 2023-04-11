@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
 
 import java.time.LocalDateTime;
 import java.util.LinkedList;
@@ -13,6 +15,8 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
+@SQLDelete(sql = "UPDATE burmistrov.public.washing_machines SET deleted = true WHERE id=?")
+@Where(clause = "deleted=false")
 @Table(name = "washingMachines")
 public class WashingMachine {
 
@@ -29,6 +33,8 @@ public class WashingMachine {
     private LocalDateTime estimatedDate;
 
     private boolean workersFound = false;
+
+    private boolean deleted = Boolean.FALSE;
 
     @OneToMany(mappedBy = "washingMachine", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @ToString.Exclude

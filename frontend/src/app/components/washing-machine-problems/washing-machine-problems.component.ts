@@ -35,6 +35,7 @@ export class WashingMachineProblemsComponent implements OnInit, OnChanges {
   }
 
 
-
-
+  clickProblem(a: Problem) {
+    this.router.navigate(['problem/'+ a.id]);
+  }
 }

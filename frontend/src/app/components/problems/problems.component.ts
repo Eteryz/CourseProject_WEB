@@ -9,17 +9,34 @@ import {Problem} from "../../models/Problem";
 })
 export class ProblemsComponent implements OnInit {
 
-  problems: Array<Problem>;
+  problems: Array<Problem> = [];
+  search: string = "";
+  problemsCopy: Array<Problem> = [];
 
   constructor(private problemService: ProblemService) {
-    this.problems = new Array<Problem>();
   }
 
   ngOnInit(): void {
+    this.gelProblems();
+  }
+
+  searchOnClick() {
+    console.log(this.search)
+    this.problems = this.problemsCopy.filter(
+      value =>
+        value.description.indexOf(this.search) >= 0 ||
+        value.price.toString().indexOf(this.search) >= 0 ||
+        value.finishDate?.toString().indexOf(this.search) >= 0 ||
+        ("Problem №"+value.id).toString().indexOf(this.search) >=0
+    );
+  }
+
+
+  gelProblems(){
     this.problemService.getAllProblem()
       .subscribe(value => {
         this.problems = value;
+        this.problemsCopy = value;
       });
   }
-
 }

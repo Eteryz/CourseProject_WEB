@@ -2,6 +2,7 @@ package com.example.applicationforfixingwashingmachines.service;
 
 import com.example.applicationforfixingwashingmachines.entity.Problem;
 import com.example.applicationforfixingwashingmachines.entity.WashingMachine;
+import com.example.applicationforfixingwashingmachines.exception.ProblemNotFound;
 import com.example.applicationforfixingwashingmachines.pojo.ProblemPojo;
 import com.example.applicationforfixingwashingmachines.repository.ProblemRepository;
 import com.example.applicationforfixingwashingmachines.repository.WashingMachineRepository;
@@ -49,5 +50,14 @@ public class ProblemServiceImpl implements ProblemService {
                 .stream()
                 .map(ProblemPojo::fromEntity)
                 .toList();
+    }
+
+    @Override
+    public ProblemPojo findById(Long id) throws ProblemNotFound {
+        return ProblemPojo.fromEntity(
+                problemRepository.
+                        findById(id).
+                        orElseThrow( () -> new ProblemNotFound("Problem with"+ id +" 10 not found"))
+        );
     }
 }
