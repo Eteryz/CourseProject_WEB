@@ -89,7 +89,11 @@ public class WashingMachineServiceImpl implements WashingMachineService{
         }
         if(!list2.isEmpty()){
             list2.forEach(
-                    value-> washingMachineRepository.deleteById(value.getId())
+                    value->
+                    {
+                        if(value.isWorkersFound())
+                            washingMachineRepository.deleteById(value.getId());
+                    }
             );
         }
     }

@@ -26,7 +26,7 @@ export class WashingMachineProblemsComponent implements OnInit, OnChanges {
     this.washingMachineService.getByIdWashingMachine(id)
       .subscribe(value => {
         this.washingMachine = value;
-        this.problems = value.problems;
+        this.problems = value.problems.filter(value1 => !value1.workersFound);
       });
   }
 

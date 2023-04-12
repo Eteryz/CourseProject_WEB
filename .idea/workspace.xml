@@ -5,26 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="272d837b-45b7-4dd6-b557-34afe43948cc" name="Changes" comment="Added automatic completion and extension of the auction">
-      <change afterPath="$PROJECT_DIR$/frontend/src/assets/programming.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationForFixingWashingMachines/src/main/java/com/example/applicationforfixingwashingmachines/ApplicationForFixingWashingMachinesApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationForFixingWashingMachines/src/main/java/com/example/applicationforfixingwashingmachines/ApplicationForFixingWashingMachinesApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationForFixingWashingMachines/src/main/java/com/example/applicationforfixingwashingmachines/controller/WashingMachineController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationForFixingWashingMachines/src/main/java/com/example/applicationforfixingwashingmachines/controller/WashingMachineController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationForFixingWashingMachines/src/main/java/com/example/applicationforfixingwashingmachines/entity/Problem.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationForFixingWashingMachines/src/main/java/com/example/applicationforfixingwashingmachines/entity/Problem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationForFixingWashingMachines/src/main/java/com/example/applicationforfixingwashingmachines/entity/Repair.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationForFixingWashingMachines/src/main/java/com/example/applicationforfixingwashingmachines/entity/Repair.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationForFixingWashingMachines/src/main/java/com/example/applicationforfixingwashingmachines/entity/WashingMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationForFixingWashingMachines/src/main/java/com/example/applicationforfixingwashingmachines/entity/WashingMachine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationForFixingWashingMachines/src/main/java/com/example/applicationforfixingwashingmachines/pojo/ProblemPojo.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationForFixingWashingMachines/src/main/java/com/example/applicationforfixingwashingmachines/pojo/ProblemPojo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationForFixingWashingMachines/src/main/java/com/example/applicationforfixingwashingmachines/pojo/WashingMachinePojo.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationForFixingWashingMachines/src/main/java/com/example/applicationforfixingwashingmachines/pojo/WashingMachinePojo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationForFixingWashingMachines/src/main/java/com/example/applicationforfixingwashingmachines/repository/WashingMachineRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationForFixingWashingMachines/src/main/java/com/example/applicationforfixingwashingmachines/repository/WashingMachineRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ApplicationForFixingWashingMachines/src/main/java/com/example/applicationforfixingwashingmachines/service/WashingMachineServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationForFixingWashingMachines/src/main/java/com/example/applicationforfixingwashingmachines/service/WashingMachineServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/problems/problems.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/problems/problems.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/problems/problems.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/problems/problems.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/repair-component/repair.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/repair-component/repair.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/repair-component/repair.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/repair-component/repair.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/washing-machines/washing-machines.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/washing-machines/washing-machines.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/models/Problem.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/models/Problem.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/models/Repair.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/models/Repair.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/washing-machine-problems/washing-machine-problems.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/washing-machine-problems/washing-machine-problems.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +115,7 @@
       <workItem from="1680192653345" duration="27670000" />
       <workItem from="1681237288736" duration="10337000" />
       <workItem from="1681251345638" duration="12476000" />
-      <workItem from="1681312768229" duration="9984000" />
+      <workItem from="1681312768229" duration="10878000" />
     </task>
     <task id="LOCAL-00001" summary="Added display of a list of washing machines and problems, also implemented sending a repair request.">
       <created>1680220903854</created>
@@ -155,7 +138,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681263918536</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added automatic completion and extension of the auction">
+      <created>1681324809086</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1681324809086</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
