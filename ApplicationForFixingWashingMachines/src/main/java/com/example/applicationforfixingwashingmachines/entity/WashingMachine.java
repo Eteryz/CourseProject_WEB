@@ -32,11 +32,11 @@ public class WashingMachine {
 
     private LocalDateTime estimatedDate;
 
-    private boolean workersFound = false;
+    private boolean workersFound = Boolean.FALSE;
 
     private boolean deleted = Boolean.FALSE;
 
-    @OneToMany(mappedBy = "washingMachine", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "washingMachine",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
     @ToString.Exclude
     private List<Problem> problems = new LinkedList<>();
 

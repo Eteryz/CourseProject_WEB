@@ -20,7 +20,7 @@ public class WashingMachinePojo {
     private String company;
     private LocalDateTime finishDate;
     private LocalDateTime estimatedDate;
-    private boolean workersFound ;
+    private boolean workersFound = Boolean.FALSE;
     private List<ProblemPojo> problems = new LinkedList<>();
 
     public static WashingMachinePojo fromEntity(WashingMachine washingMachine) {

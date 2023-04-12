@@ -20,6 +20,7 @@ public class ProblemPojo {
     private double price;
     private LocalDateTime finishDate;
     private Long washingMachineId;
+    private boolean workersFound = Boolean.FALSE;
     private List<RepairPojo> repairs = new LinkedList<>();
 
 

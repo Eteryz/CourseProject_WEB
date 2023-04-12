@@ -2,7 +2,7 @@ export interface Repair {
   id: number;
   phoneNumber: string;
   email: string;
-  price: number;
+  price: number | undefined;
   fullName: string;
   date: Date;
   problemId: number;
@@ -14,7 +14,7 @@ export class RepairImpl implements Repair{
   fullName: string = "";
   id: number = -1;
   phoneNumber: string = "";
-  price: number = 0;
+  price: undefined = undefined;
   problemId: number = -1;
 
 }

@@ -13,7 +13,7 @@ import java.time.LocalDate;
 @Setter
 @SQLDelete(sql = "UPDATE burmistrov.public.repair SET deleted = true WHERE id=?")
 @Where(clause = "deleted=false")
-public class Repair {
+public class Repair{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

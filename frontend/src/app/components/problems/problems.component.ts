@@ -35,8 +35,8 @@ export class ProblemsComponent implements OnInit {
   gelProblems(){
     this.problemService.getAllProblem()
       .subscribe(value => {
-        this.problems = value;
-        this.problemsCopy = value;
+        this.problems = value.filter(value1 => !value1.workersFound);
+        this.problemsCopy = this.problems;
       });
   }
 }

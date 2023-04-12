@@ -21,7 +21,7 @@ export class WashingMachinesComponent implements OnInit {
   ngOnInit(): void {
     this.washingMachineService.getAllWashingMachines()
       .subscribe(value => {
-        this.arr = value
+        this.arr = value.filter(value1 => !value1.workersFound)
       });
   }
 

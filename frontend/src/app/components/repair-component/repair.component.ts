@@ -18,6 +18,7 @@ export class RepairComponent implements OnInit {
 
   problemInfo: Problem;
   washingMachineInfo: WashingMachine;
+  today: string = new Date().toISOString().split("T")[0];
 
   constructor( private route: ActivatedRoute,
                private router: Router,

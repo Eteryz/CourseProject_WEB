@@ -30,13 +30,15 @@ public class Problem {
 
     private LocalDateTime finishDate;
 
+    private boolean workersFound = Boolean.FALSE;
+
     private boolean deleted = Boolean.FALSE;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "washingMachines_id")
     private WashingMachine washingMachine;
 
-    @OneToMany( mappedBy = "problem", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany( mappedBy = "problem", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @ToString.Exclude
     private List<Repair> repairs = new LinkedList<>();
 

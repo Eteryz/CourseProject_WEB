@@ -20,7 +20,7 @@
     <form class="needs-validation"
           name="repairForm"
           novalidate
-          (ngSubmit)="submit()"
+          (ngSubmit)="f.form.valid && submit()"
           #f="ngForm"
     >
       <div class="row g-3">
@@ -30,9 +30,16 @@
                  class="form-control"
                  name="fullName"
                  [(ngModel)]="repairForm.fullName"
-                 required="true">
-          <div class="invalid-feedback">
-            Valid first name is required.
+                 required="true"
+                 #fullName="ngModel"
+                 placeholder="Ivanoc Ivan Ivanovich"
+          >
+          <div
+            class="alert alert-danger"
+            role="alert"
+            *ngIf="fullName.errors && f.submitted"
+          >
+            <div *ngIf="fullName.errors['required']">FullName required error!</div>
           </div>
         </div>
 
@@ -43,9 +50,16 @@
                  name="email"
                  [(ngModel)]="repairForm.email"
                  placeholder="you@example.com"
-                 required="true">
-          <div class="invalid-feedback">
-            Please enter a valid email address for shipping updates.
+                 required="true"
+                  #email="ngModel"
+          >
+          <div
+            class="alert alert-danger"
+            role="alert"
+            *ngIf="email.errors && f.submitted"
+          >
+            <div *ngIf="email.errors['required']">Email required error!</div>
+            <div *ngIf="email.errors['pattern']">Invalid email format</div>
           </div>
         </div>
 
@@ -54,9 +68,22 @@
           <input type="text"
                  class="form-control"
                  name="phoneNumber"
+                 pattern="(?:(?:8|\+7)[\- ]?)?(?:\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}"
                  [(ngModel)]="repairForm.phoneNumber"
-                 placeholder="89278X8X45X">
+                 placeholder="89278X8X45X"
+                 #phoneNumber="ngModel"
+                 required
+          >
+          <div
+            class="alert alert-danger"
+            role="alert"
+            *ngIf="phoneNumber.errors && f.submitted"
+          >
+            <div *ngIf="phoneNumber.errors['required']">PhoneNumber required error!</div>
+            <div *ngIf="phoneNumber.errors['pattern']">Invalid number format</div>
+          </div>
         </div>
+
 
         <div class="col-12">
           <label  class="form-label">Price <span class="text-body-secondary">(Enter only a number)</span></label>
@@ -65,10 +92,19 @@
                  name="price"
                  placeholder="1000.50 (тысяча рублей пятьдесят копеек)"
                  [(ngModel)]="repairForm.price"
-                 required="true">
-          <div class="invalid-feedback">
-            Please enter your shipping address.
+                 pattern="^[0-9]*[.,]?[0-9]+$"
+                 required="true"
+                 #price="ngModel"
+          >
+          <div
+            class="alert alert-danger"
+            role="alert"
+            *ngIf="price.errors && f.submitted"
+          >
+            <div *ngIf="price.errors['required']">Price required error!</div>
+            <div *ngIf="price.errors['pattern']">Invalid input format!</div>
           </div>
+        </div>
         </div>
 
         <div class="col-12">
@@ -76,17 +112,25 @@
           <div class="input-group has-validation">
             <input type="date"
                    class="form-control"
+                   onkeydown="return false"
                    placeholder="Time"
                    name="date"
                    [(ngModel)]="repairForm.date"
-                   required="true">
-            <div class="invalid-feedback">
-              Your username is required.
+                   min="{{today}}"
+                   required="true"
+                   #date="ngModel"
+            >
+            <div
+              class="alert alert-danger"
+              role="alert"
+              *ngIf="date.errors && f.submitted"
+            >
+              <div *ngIf="date.errors['required']">Date is required!</div>
+              <div *ngIf="date.errors['min']">This date cannot be specified!</div>
             </div>
           </div>
         </div>
 
-      </div>
       <button class="mt-5 mb-2 w-100 btn btn-primary btn-lg" type="submit">Apply</button>
     </form>
   </div>
