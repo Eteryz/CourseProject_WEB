@@ -1,0 +1,154 @@
+{
+	"info": {
+		"_postman_id": "323e12b2-885f-4f52-8032-6b0b9200dfdd",
+		"name": "Burmistrov",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19505418"
+	},
+	"item": [
+		{
+			"name": "getProblem",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "getProblemById",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "getWashingMachine",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "getRepair",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "deleteWashingMachine",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/washingMachine/delete/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"washingMachine",
+						"delete",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addWashingMachine",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Машина\",\r\n    \"company\": \"Самсунг\",\r\n    \"finishDate\": \"2023-04-10T12:00\",\r\n    \"estimatedDate\": \"2023-03-31T12:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/washingMachine/add",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"washingMachine",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addProblem",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"description\": \"Взорвался Тэн\",\r\n    \"price\": 10000,\r\n    \"finishDate\": \"2023-05-04T16:00\",\r\n    \"washingMachineId\": \"3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/problem/add",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"problem",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addRepair",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"description\": \"Сломан барабан\",\r\n    \"price\": 5600.50,\r\n    \"estimatedDate\": \"\",\r\n    \"finishDate\": \"\",\r\n    \"washingMachineId\": \"2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/problem/add",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"problem",
+						"add"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

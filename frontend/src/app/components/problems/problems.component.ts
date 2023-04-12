@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ProblemService} from "../../services/problem.service";
 import {Problem} from "../../models/Problem";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-problems',
@@ -13,7 +14,9 @@ export class ProblemsComponent implements OnInit {
   search: string = "";
   problemsCopy: Array<Problem> = [];
 
-  constructor(private problemService: ProblemService) {
+  constructor(private problemService: ProblemService,
+              private router: Router
+              ) {
   }
 
   ngOnInit(): void {
@@ -38,5 +41,9 @@ export class ProblemsComponent implements OnInit {
         this.problems = value.filter(value1 => !value1.workersFound);
         this.problemsCopy = this.problems;
       });
+  }
+
+  clickProblem(id: number) {
+    this.router.navigate(['problem/'+ id]);
   }
 }
