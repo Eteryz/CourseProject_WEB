@@ -16,4 +16,6 @@ public interface WashingMachineService {
     List<WashingMachinePojo> findAll();
 
     WashingMachinePojo getById(Long id) throws WashingMachineException;
+
+    void endOfAuction();
 }

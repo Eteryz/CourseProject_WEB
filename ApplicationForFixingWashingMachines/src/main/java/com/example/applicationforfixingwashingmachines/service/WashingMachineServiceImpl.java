@@ -51,4 +51,9 @@ public class WashingMachineServiceImpl implements WashingMachineService{
         ));
     }
 
+    @Override
+    public void endOfAuction() {
+
+    }
+
 }
