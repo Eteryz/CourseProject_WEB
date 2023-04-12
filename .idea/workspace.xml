@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="272d837b-45b7-4dd6-b557-34afe43948cc" name="Changes" comment="Added automatic completion and extension of the auction">
+    <list default="true" id="272d837b-45b7-4dd6-b557-34afe43948cc" name="Changes" comment="bug fix">
+      <change afterPath="$PROJECT_DIR$/ApplicationForFixingWashingMachines/src/main/java/com/example/applicationforfixingwashingmachines/config/WebConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationForFixingWashingMachines/src/main/java/com/example/applicationforfixingwashingmachines/service/WashingMachineServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationForFixingWashingMachines/src/main/java/com/example/applicationforfixingwashingmachines/service/WashingMachineServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/washing-machine-problems/washing-machine-problems.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/washing-machine-problems/washing-machine-problems.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationForFixingWashingMachines/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationForFixingWashingMachines/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +70,10 @@
     <property name="last_directory_selection" value="$PROJECT_DIR$/ApplicationForFixingWashingMachines/src/main/java/com/example/applicationforfixingwashingmachines" />
     <property name="last_opened_file_path" value="$USER_HOME$/IdeaProjects/Spring" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.DirectoryMappings" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
     <property name="ts.external.directory.path" value="C:\Users\Vladislav\Desktop\Учеба\8 семестр\WEB\CourseProject_WEB\frontend\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
@@ -115,7 +118,7 @@
       <workItem from="1680192653345" duration="27670000" />
       <workItem from="1681237288736" duration="10337000" />
       <workItem from="1681251345638" duration="12476000" />
-      <workItem from="1681312768229" duration="10878000" />
+      <workItem from="1681312768229" duration="12384000" />
     </task>
     <task id="LOCAL-00001" summary="Added display of a list of washing machines and problems, also implemented sending a repair request.">
       <created>1680220903854</created>
@@ -145,7 +148,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681324809086</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="bug fix">
+      <created>1681325816066</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1681325816066</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,11 +176,11 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/frontend" />
     </ignored-roots>
-    <MESSAGE value="bug fix" />
     <MESSAGE value="Added display of a list of washing machines and problems, also implemented sending a repair request." />
     <MESSAGE value="fixed navigation and display of tabs" />
     <MESSAGE value="Task scheduling will be done via timer.schedule()" />
     <MESSAGE value="Added automatic completion and extension of the auction" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added automatic completion and extension of the auction" />
+    <MESSAGE value="bug fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="bug fix" />
   </component>
 </project>
