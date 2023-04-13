@@ -22,10 +22,12 @@ public class ProblemServiceImpl implements ProblemService {
 
     @Override
     public ProblemPojo save(ProblemPojo problemPojo){
-        Problem problem = problemPojo.toEntity();
         Optional<WashingMachine> washingMachine =washingMachineRepository.findById(problemPojo.getWashingMachineId());
         if(washingMachine.isEmpty())
             return null;
+        if(washingMachine.get().isWorkersFound())
+            return null;
+        Problem problem = problemPojo.toEntity();
         problem.setWashingMachine(washingMachine.get());
         return ProblemPojo.fromEntity(problemRepository.save(problem));
     }

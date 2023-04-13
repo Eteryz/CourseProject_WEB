@@ -15,7 +15,9 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.Comparator;
 import java.util.List;
+import java.util.function.Supplier;
 
 @EnableAsync
 @Service
@@ -100,12 +102,18 @@ public class WashingMachineServiceImpl implements WashingMachineService{
 
     @Transactional
     private boolean existRepair(List<Problem> list){
+        if (list.isEmpty())
+            return false;
         for (Problem problem: list) {
             if(problem.getRepairs().isEmpty())
                 return false;
             else {
                 problem.setWorkersFound(true);
                 problemRepository.save(problem);
+//                Repair repair = problem.getRepairs()
+//                        .stream()
+//                        .min(Comparator.comparingDouble(Repair::getPrice))
+//                        .orElseGet(() -> problem.getRepairs().get(0));
 
             }
         }

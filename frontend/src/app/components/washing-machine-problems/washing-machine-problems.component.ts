@@ -3,7 +3,6 @@ import { Problem } from 'src/app/models/Problem';
 import {WashingMachineService} from "../../services/washing-machine.service";
 import {ActivatedRoute, NavigationEnd, Router} from "@angular/router";
 import {WashingMachine} from "../../models/WashingMachine";
-import {filter} from "rxjs";
 
 @Component({
   selector: 'app-washing-machine-problems',

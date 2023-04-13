@@ -1,0 +1,15 @@
+<div class="list-group p-2 w-50 container" *ngFor="let el of problems;" >
+  <div class="list-group-item list-group-item-action" aria-current="true">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Problem №{{el.id}}</h5>
+      <p class="text-end">{{el.price}} EUR</p>
+    </div>
+    <p class="mb-1">Description: {{el.description}}</p>
+    <small>Must be corrected by the {{el.finishDate}}.</small>
+    <hr>
+    <h3>Winner: {{getRepairWinner(el.repairs).fullName}}</h3>
+    <small>Email: {{getRepairWinner(el.repairs).email}}</small>
+    <br>
+    <small>Suggested repair cost: {{getRepairWinner(el.repairs).price}}</small>
+  </div>
+</div>

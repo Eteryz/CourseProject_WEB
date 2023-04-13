@@ -9,6 +9,9 @@ import {HttpClientModule} from "@angular/common/http";
 import { WashingMachineProblemsComponent } from './components/washing-machine-problems/washing-machine-problems.component';
 import { RepairComponent } from './components/repair-component/repair.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { CompletedAuctionComponent } from './components/completed-auction/completed-auction.component';
+import { WashingMachinesTemplateComponent } from './components/washing-machines-template/washing-machines-template.component';
+import { CompletedAuctionProblemsComponent } from './components/completed-auction-problems/completed-auction-problems.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     WashingMachinesComponent,
     ProblemsComponent,
     WashingMachineProblemsComponent,
-    RepairComponent
+    RepairComponent,
+    CompletedAuctionComponent,
+    WashingMachinesTemplateComponent,
+    CompletedAuctionProblemsComponent
   ],
   imports: [
     BrowserModule,

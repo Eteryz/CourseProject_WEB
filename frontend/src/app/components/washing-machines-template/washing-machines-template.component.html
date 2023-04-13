@@ -1,0 +1,28 @@
+<div class="album py-5 bg-body-tertiary text-center">
+  <div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      <div *ngFor="let a of washingMachines; let index=index; let odd=odd; let even=even;">
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm">
+            <div class="card-header py-3">
+              <h4 class="my-0 fw-normal">{{a.name}}</h4>
+            </div>
+            <div class="card-body">
+              <h2 class="card-title pricing-card-title">{{a.company}}</h2>
+              <ul class="list-unstyled mt-3 mb-4">
+                <li>Auction date: {{a.estimatedDate}}</li>
+                <li>Date of completion repair: {{a.estimatedDate}}</li>
+              </ul>
+              <button type="button"
+                      class="w-100 btn btn-lg btn-outline-primary"
+                      (click)="getWashingMachineProblems(a.id)"
+              >
+                View Issues
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

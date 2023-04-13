@@ -20,11 +20,13 @@ public class RepairServiceImpl implements RepairService{
     private final ProblemRepository problemRepository;
 
     @Override
-    public RepairPojo save( RepairPojo repairPojo){
-        Repair repair = repairPojo.toEntity();
+    public RepairPojo save(RepairPojo repairPojo){
         Optional<Problem> problem = problemRepository.findById(repairPojo.getProblemId());
         if(problem.isEmpty())
             return null;
+        if(problem.get().isWorkersFound())
+            return null;
+        Repair repair = repairPojo.toEntity();
         repair.setProblem(problem.get());
         return RepairPojo.fromEntity(repairRepository.save(repair));
     }

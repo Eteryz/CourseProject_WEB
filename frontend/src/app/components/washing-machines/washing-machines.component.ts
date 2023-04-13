@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {WashingMachineService} from "../../services/washing-machine.service";
 import {WashingMachine} from "../../models/WashingMachine";
-import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-washing-machines',
@@ -10,22 +9,19 @@ import {Router} from "@angular/router";
 })
 export class WashingMachinesComponent implements OnInit {
 
-  public arr: Array<WashingMachine>;
-
-
-  constructor(public washingMachineService: WashingMachineService,
-              private router: Router,) {
-    this.arr = new Array<WashingMachine>();
-  }
-
-  ngOnInit(): void {
+  washingMachines: Array<WashingMachine> = [];
+  getWashingMachines(): void{
     this.washingMachineService.getAllWashingMachines()
       .subscribe(value => {
-        this.arr = value.filter(value1 => !value1.workersFound)
+        this.washingMachines = value.filter(value1 => !value1.workersFound)
       });
   }
 
-  getWashingMachineProblems(id: number) {
-    this.router.navigate(["/washingMachines", id]);
+
+  constructor(public washingMachineService: WashingMachineService) {
+  }
+
+  ngOnInit(): void {
+    this.getWashingMachines();
   }
 }
