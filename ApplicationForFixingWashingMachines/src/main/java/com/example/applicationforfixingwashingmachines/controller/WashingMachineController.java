@@ -37,10 +37,6 @@ public class WashingMachineController {
         }
     }
 
-    private void test(){
-        log.info("Task completed!");
-    }
-
     @DeleteMapping("/delete/{id}")
     public boolean delete(@PathVariable Long id){
         return washingMachineService.deleteById(id);
